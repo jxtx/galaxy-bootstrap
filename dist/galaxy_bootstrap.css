@@ -1717,7 +1717,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 25px;
+  height: 27px;
   padding: 4px 10px;
   font-size: 12px;
   line-height: 1.428571429;
@@ -1817,7 +1817,7 @@ fieldset[disabled] .checkbox-inline {
 }
 
 .input-sm {
-  height: 22px;
+  height: 24px;
   padding: 3px 8px;
   font-size: 11px;
   line-height: 1.5;
@@ -1825,8 +1825,8 @@ fieldset[disabled] .checkbox-inline {
 }
 
 select.input-sm {
-  height: 22px;
-  line-height: 22px;
+  height: 24px;
+  line-height: 24px;
 }
 
 textarea.input-sm {
@@ -1834,7 +1834,7 @@ textarea.input-sm {
 }
 
 .input-lg {
-  height: 35px;
+  height: 37px;
   padding: 8px 14px;
   font-size: 15px;
   line-height: 1.33;
@@ -1842,8 +1842,8 @@ textarea.input-sm {
 }
 
 select.input-lg {
-  height: 35px;
-  line-height: 35px;
+  height: 37px;
+  line-height: 37px;
 }
 
 textarea.input-lg {
@@ -3652,7 +3652,7 @@ input[type="button"].btn-block {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 35px;
+  height: 37px;
   padding: 8px 14px;
   font-size: 15px;
   line-height: 1.33;
@@ -3662,8 +3662,8 @@ input[type="button"].btn-block {
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn {
-  height: 35px;
-  line-height: 35px;
+  height: 37px;
+  line-height: 37px;
 }
 
 textarea.input-group-lg > .form-control,
@@ -3675,7 +3675,7 @@ textarea.input-group-lg > .input-group-btn > .btn {
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  height: 22px;
+  height: 24px;
   padding: 3px 8px;
   font-size: 11px;
   line-height: 1.5;
@@ -3685,8 +3685,8 @@ textarea.input-group-lg > .input-group-btn > .btn {
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn {
-  height: 22px;
-  line-height: 22px;
+  height: 24px;
+  line-height: 24px;
 }
 
 textarea.input-group-sm > .form-control,
@@ -4334,9 +4334,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-form {
   padding: 10px 15px;
-  margin-top: 4px;
+  margin-top: 3px;
   margin-right: -15px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   margin-left: -15px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -4404,8 +4404,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-btn {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .navbar-text {
@@ -6861,9 +6861,3 @@ td.visible-print {
   font-size: 160%;
   font-weight: bold;
 }
-
-/* JT
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
-@input-height-large:             (floor(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
-@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
-*/
