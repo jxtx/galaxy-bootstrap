@@ -2,6 +2,7 @@
     "name": "galaxy-bootstrap-theme",
     "devDependencies": {
       "grunt": "~0.4.1",
-      "grunt-recess": "~0.3.3"
+      "grunt-recess": "~0.3.3",
+      "grunt-jekyll": "~0.3.8"
   }
 }

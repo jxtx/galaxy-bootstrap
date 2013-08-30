@@ -14,23 +14,31 @@ module.exports = function(grunt) {
         compile: true
       },
       bootstrap: {
-        src: ['index.less'],
-        dest: 'index.css'
+        src: ['galaxy_bootstrap.less'],
+        dest: 'dist/galaxy_bootstrap.css'
       },
       min: {
         options: {
           compress: true
         },
-        src: ['index.less'],
-        dest: 'index.min.css'
+        src: ['galaxy_bootstrap.less'],
+        dest: 'dist/galaxy_bootstrap.min.css'
       }
-    }
+    },
+    jekyll: {
+      example: {
+        pygments: "true",
+        src: "example",
+        dest: "dist"
+      }
+    },
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-jekyll');
 
   // Default task.
-  grunt.registerTask('default', ['recess']);
+  grunt.registerTask('default', ['jekyll','recess']);
 
 };
