@@ -2,17 +2,25 @@
 // Caveat: currently only works for light colored backgrounds, less provides functions (contrast) that could be used to improve this
 
 // Base color -- Based on the Galaxy masthead color
-@base-color: lighten(#2C3143,35%);
+@base-color-1: #2C3143;
+@base-color-2: lighten(@base-color-1,25%);
+@base-color-3: lighten(@base-color-1,50%);
+
+@complement-color-1: spin(@base-color-1,180);
+@complement-color-2: spin(@base-color-2,180);
+@complement-color-3: spin(@base-color-3,180);
+
+@base-color: @base-color-2;
 
 // Default border bolor, this is between gray-light and gray-lighter -- classic Galaxy border color
-@border-default-color: #ccc;
+@border-default-color: lighten(black, 75%);
 
 // When making borders for components with other colors, how much to darken 
-@border-darken-percent: 10%;
+@border-darken-percent: 40%;
 
 // For making state colors, how much to darken and lighten
 @state-text-darken-percent: 15%;
-@state-bg-lighten-percent: 30%;
+@state-bg-lighten-percent: 40%;
 @state-bg-saturate-percent: 30%;
 
 // Why bootstrap stopped defining these as variables I don't know
@@ -21,6 +29,7 @@
 
 // Bootstrap default colors for states, will be adjusted based on @base-color
 
+@bs-primary:		 #428bca;
 @bs-info:            #5bc0de;
 @bs-success:         #5cb85c;
 @bs-warning:         #f0ad4e;
@@ -46,21 +55,22 @@
 // Grays
 // -------------------------
 
-@gray-darker:            lighten(@black, 13.5%); // #222
-@gray-dark:              lighten(@black, 20%);   // #333
-@gray:                   lighten(@black, 33.5%); // #555
-@gray-light:             lighten(@black, 60%);   // #999
-@gray-lighter:           lighten(@black, 93.5%); // #eee
+@gray-darker:            lighten(black, 13.5%); // #222
+@gray-dark:              lighten(black, 20%);   // #333
+@gray:                   lighten(black, 33.5%); // #555
+@gray-light:             lighten(black, 60%);   // #999
+@gray-lighter:           lighten(black, 93.5%); // #eee
 
 // Brand colors
 // -------------------------
 
 @brand-primary:         @base-color;
+// @brand-primary:         hsl(hue(@bs-primary),(saturation(@bs-info) + @sat + 20)/2,@luma - 10);
 
-@brand-info:            hsl(hue(@bs-info),(saturation(@bs-info) + @sat)/2,@luma - 10);
-@brand-success:         hsl(hue(@bs-success),(saturation(@bs-success) + @sat)/2,(luma(@bs-success) + @luma - 20)/2);
-@brand-warning:         hsl(hue(@bs-warning),(saturation(@bs-warning) + @sat + 16)/2,(luma(@bs-warning) + @luma - 20)/2);
-@brand-danger:          hsl(hue(@bs-danger),(saturation(@bs-danger) + @sat)/2,(luma(@bs-danger) + @luma + 10)/2);
+@brand-info:            hsl(hue(@bs-info),(saturation(@bs-info) + @sat + 20)/2,@luma);
+@brand-success:         hsl(hue(@bs-success),(saturation(@bs-success) + @sat + 20)/2,(luma(@bs-success) + @luma - 20)/2);
+@brand-warning:         hsl(hue(@bs-warning),(saturation(@bs-warning) + @sat + 20)/2,(luma(@bs-warning) + @luma - 20)/2);
+@brand-danger:          hsl(hue(@bs-danger),(saturation(@bs-danger) + @sat + 20)/2,(luma(@bs-danger) + @luma + 10)/2);
 
 // Scaffolding
 // -------------------------
@@ -86,9 +96,9 @@
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
-@font-size-h1:            floor(@font-size-base * 2.60); // ~36px
-@font-size-h2:            floor(@font-size-base * 2.15); // ~30px
-@font-size-h3:            ceil(@font-size-base * 1.70); // ~24px
+@font-size-h1:            floor(@font-size-base * 2); // ~36px
+@font-size-h2:            floor(@font-size-base * 1.75); // ~30px
+@font-size-h3:            ceil(@font-size-base * 1.5); // ~24px
 @font-size-h4:            ceil(@font-size-base * 1.25); // ~18px
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil(@font-size-base * 0.85); // ~12px
@@ -97,7 +107,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    500;
+@headings-font-weight:    800;
 @headings-line-height:    1.1;
 
 // Iconography
@@ -152,7 +162,7 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              #333;
-@btn-default-bg:                 @white;
+@btn-default-bg:                 darken(@white,5%);
 @btn-default-border:             @border-default-color;
 
 @btn-primary-color:              @white;
@@ -325,7 +335,7 @@
 //
 // Reset inverted navbar basics
 @navbar-inverse-color:                      @gray-light;
-@navbar-inverse-bg:                         darken(@base-color,35%); //JT #222;
+@navbar-inverse-bg:                         darken(@base-color,25%); //JT #222;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
@@ -361,15 +371,15 @@
 @nav-open-caret-border-color:               @white;
 
 // Tabs
-@nav-tabs-border-color:                     #ddd;
+@nav-tabs-border-color:                     @border-default-color;
 
 @nav-tabs-link-hover-border-color:          @gray-lighter;
 
 @nav-tabs-active-link-hover-bg:             @body-bg;
 @nav-tabs-active-link-hover-color:          @gray;
-@nav-tabs-active-link-hover-border-color:   #ddd;
+@nav-tabs-active-link-hover-border-color:   @border-default-color;
 
-@nav-tabs-justified-link-border-color:            #ddd;
+@nav-tabs-justified-link-border-color:            @border-default-color;
 @nav-tabs-justified-active-link-border-color:     @body-bg;
 
 // Pills
@@ -413,19 +423,19 @@
 
 @state-warning-text:             darken(@brand-warning, @state-text-darken-percent);
 @state-warning-bg:               saturate(lighten(@brand-warning, @state-bg-lighten-percent),@state-bg-saturate-percent);
-@state-warning-border:           darken(@brand-warning, @border-darken-percent);
+@state-warning-border:           darken(@state-warning-bg, @border-darken-percent);
 
 @state-danger-text:              darken(@brand-danger, @state-text-darken-percent);
 @state-danger-bg:                saturate(lighten(@brand-danger, @state-bg-lighten-percent),@state-bg-saturate-percent);
-@state-danger-border:            darken(@brand-danger, @border-darken-percent);
+@state-danger-border:            darken(@state-danger-bg, @border-darken-percent);
 
 @state-success-text:             darken(@brand-success, @state-text-darken-percent);
 @state-success-bg:               saturate(lighten(@brand-success, @state-bg-lighten-percent),@state-bg-saturate-percent);
-@state-success-border:           darken(@brand-success, @border-darken-percent);
+@state-success-border:           darken(@state-success-bg, @border-darken-percent);
 
 @state-info-text:                darken(@brand-info, @state-text-darken-percent);
 @state-info-bg:                  saturate(lighten(@brand-info, @state-bg-lighten-percent),@state-bg-saturate-percent);
-@state-info-border:              darken(@brand-info, @border-darken-percent);
+@state-info-border:              darken(@state-info-bg, @border-darken-percent);
 
 
 // Tooltips
