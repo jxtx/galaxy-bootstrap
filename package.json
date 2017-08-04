@@ -12,7 +12,9 @@
     "less-plugin-clean-css": "^1.5.1"
   },
   "scripts": {
-    "build": "lessc galaxy_bootstrap.less dist/galaxy_bootstrap.css",
-    "min": "lessc --clean-css galaxy_bootstrap.less dist/galaxy_bootstrap.css"
+    "build": "yarn run less; yarn run min; yarn run docs",
+    "less": "lessc galaxy_bootstrap.less dist/galaxy_bootstrap.css",
+    "min": "lessc --clean-css galaxy_bootstrap.less dist/galaxy_bootstrap.min.css",
+    "docs": "cp dist/* docs"
   }
 }

@@ -6,6 +6,6 @@ A "theme" for bootstrap that can be used for Galaxy.
 
 To build:
 
-`yarn build; yarn min`
+`yarn run build`
 
 index.html is a sample stolen from Bootswatch that shows most things.
