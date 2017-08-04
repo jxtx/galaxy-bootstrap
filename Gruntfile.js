@@ -32,15 +32,11 @@ module.exports = function(grunt) {
         dest: "dist"
       }
     },
-    build_gh_pages: {
-        gh_pages: {}
-    }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-build-gh-pages');
 
   // Default task.
   grunt.registerTask('default', ['jekyll','recess','build_gh_pages']);
