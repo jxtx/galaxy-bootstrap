@@ -6,8 +6,6 @@ A "theme" for bootstrap that can be used for Galaxy.
 
 To build:
 
-`npm install grunt-cli`
-`npm install`
-`grunt`
+`yarn build; yarn min`
 
 index.html is a sample stolen from Bootswatch that shows most things.
