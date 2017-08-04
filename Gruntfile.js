@@ -39,6 +39,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
 
   // Default task.
-  grunt.registerTask('default', ['jekyll','recess','build_gh_pages']);
+  grunt.registerTask('default', ['jekyll','recess']);
 
 };

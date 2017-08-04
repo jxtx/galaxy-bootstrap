@@ -1,10 +1,18 @@
 {
   "name": "galaxy-bootstrap-theme",
+  "license": "AFL-3.0",
   "devDependencies": {
     "bootstrap": "^3.3.7",
+    "clean-css": "^4.1.7",
     "grunt": "~0.4.1",
     "grunt-jekyll": "~0.3.8",
     "grunt-recess": "~0.3.3",
-    "grunt-shell": "~0.2.2"
+    "grunt-shell": "~0.2.2",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1"
+  },
+  "scripts": {
+    "build": "lessc galaxy_bootstrap.less dist/galaxy_bootstrap.css",
+    "min": "lessc --clean-css galaxy_bootstrap.less dist/galaxy_bootstrap.css"
   }
 }
