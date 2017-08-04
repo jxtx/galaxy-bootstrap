@@ -1,10 +1,11 @@
 {
   "name": "galaxy-bootstrap-theme",
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "grunt": "~0.4.1",
-    "grunt-recess": "~0.3.3",
+    "grunt-build-gh-pages": "~0.1.0",
     "grunt-jekyll": "~0.3.8",
-    "grunt-shell": "~0.2.2",
-    "grunt-build-gh-pages": "~0.1.0"
+    "grunt-recess": "~0.3.3",
+    "grunt-shell": "~0.2.2"
   }
 }
